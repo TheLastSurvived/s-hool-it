@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'teachers:quiz_change_list' %}">Мои тесты</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Добавить новую тему</li>
+    </ol>
+  </nav>
+  
+  <div class="w-50">
+    <h2>Добавить новую тему</h2>
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-12">
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="my-3">
+            <label for="theme">Название темы</label>
+            <input id="theme" type="text" class="textinput textInput form-control" required name="theme">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-success">Добавить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
