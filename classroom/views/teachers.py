@@ -182,7 +182,7 @@ def load_csv(request):
     takens = TakenQuiz.objects.all() 
     writer = csv.writer(response) 
     
-    writer.writerow(['Студент', 'Дата', 'Бал']) 
+    writer.writerow(['Студент', 'Дата', 'Балл']) 
     
     for taken in takens: 
         writer.writerow([taken.student,taken.date,taken.score]) 
